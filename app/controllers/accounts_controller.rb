@@ -93,7 +93,6 @@ class AccountsController < ApplicationController
   end
 
   def assign_age_group(account)
-    byebug
     age_group = AgeGroup.find_by("min_age <= ? AND max_age >= ?", account.age, account.age)
     account.age_group_id = age_group.id if age_group
   end
